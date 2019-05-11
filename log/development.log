@@ -6732,3 +6732,28 @@ Processing by PostsController#show as */*
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "14"]]
   Rendered posts/show.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 1.1ms)
+Started GET "/posts/new" for ::1 at 2019-05-10 20:24:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 583ms (Views: 558.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-05-10 20:29:34 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 36ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-05-10 20:29:48 -0400
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vflTbXNBnq04lIF1JcYCYKI7+5IL4Led/yzwpg7O7NEsjCdODBAyqI6EJtPA7+gPm2FMG9+miEiCfJ9t7CinsQ==", "post"=>{"title"=>"Test Post", "description"=>"test post's description"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Test Post"], ["description", "test post's description"], ["created_at", "2019-05-11 00:29:48.767249"], ["updated_at", "2019-05-11 00:29:48.767249"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 25ms (Views: 17.2ms | ActiveRecord: 3.3ms)
+
+
